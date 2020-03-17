@@ -1,4 +1,24 @@
 ---
-layout: default
-title: Coding standarts
 ---
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Coding standarts</title>
+  </head>
+  <body>
+    <p><a href="https://github.com/allejo/jekyll-toc">allejo/jekyll-toc</a> demo</p>   
+		{% capture foo %}
+    {% for x in site.sections %}
+      {{ x.content | markdownify }}
+    {% endfor %}
+		{% endcapture %}
+		
+		{% include toc.html html=foo id="toc" %}
+		
+		{% for x in site.sections %}
+			{{ x.content | markdownify }}
+		{% endfor %}
+  </body>
+</html>
