@@ -10,15 +10,9 @@
   <body>
     <p><a href="https://github.com/allejo/jekyll-toc">allejo/jekyll-toc</a> demo</p>   
 		{% capture foo %}
-    {% for x in site.sections %}
-      {{ x.content | markdownify }}
-    {% endfor %}
+    {% include list_sections.html %}
 		{% endcapture %}
-		
 		{% include toc.html html=foo id="toc" %}
-		
-		{% for x in site.sections %}
-			{{ x.content | markdownify }}
-		{% endfor %}
+		{% include list_sections.html %}
   </body>
 </html>
